@@ -8,9 +8,11 @@ const {isAuthenticated, loginWithRedirect, logout, user, isLoading} = useAuth0()
 const [myUser, setMyUser] = useState(null);
 
 useEffect(() => {
-console.log(`'user':${user}`);
-console.log(`'isAuthenticated':${isAuthenticated}`);
-console.log(`'isLoading':${isLoading}`);
+  if(isAuthenticated) {
+    setMyUser(user)
+  } else {
+    setMyUser(false)
+  }
 }, [isAuthenticated])
 
   return (
