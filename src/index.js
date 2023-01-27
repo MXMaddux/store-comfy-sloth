@@ -16,11 +16,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Auth0Provider
-        domain="dev-kpkoss4zchobo83v.us.auth0.com"
-        clientId="fCzTNbPb8ZStxC6mr9frQ533hFxaZ0nf"
-        redirectUri={window.location.origin}
-        cacheLocation="localstorage"
-    >
+    domain={process.env.REACT_APP_AUTH_DOMAIN}
+    clientId={process.env.REACT_APP_AUTH_CLIENT_ID}
+    redirectUri={window.location.origin}
+    cacheLocation="localstorage"
+  >
     <UserProvider>
       <ProductsProvider>
         <FilterProvider>
